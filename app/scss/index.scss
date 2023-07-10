@@ -221,7 +221,7 @@ section.hero {
 
             @media only screen and (max-width: $mw) {
                 width: 25%;
-                bottom: 73px;
+                bottom: 100px;
             }
         }
     }
@@ -335,17 +335,31 @@ section.hero {
                     margin-top: 90px;
                     img {
                         &.can {
-                            right: -50px;
+                            right: -30px;
                             top: -85px;
-                            max-width: 71%;
+                            max-width: 67%;
                         }
                         &.plate {
-                            left: -18px;
+                            left: 10px;
                             top: 0;
-                            max-width: 81%;
+                            max-width: 70%;
                         }
                     }
                 }
+            }
+            .part-text {
+                
+                .content {
+                    text-align: center;
+                    p {
+                        text-align: right;
+                    }
+                    img {
+                        height: 80px;
+                        
+                    }
+                }
+                
             }
         }
 
@@ -770,6 +784,8 @@ section.products {
 .section-bg-products {
     background: #fef8f3 url("../images/index/bg-products.png") no-repeat;
     background-position: left center;
+    max-width: 1755px;
+    margin: auto;
     section {
         background: none;
     }
@@ -784,12 +800,20 @@ section.recipes {
             right: -45px;
             width: 20%;
             text-align: right;
+            @media only screen and (max-width : $mw) {
+                right: -45px;
+                width: 40%;
+            }
         }
         &.d2 {
             top: 0px;
             left: -25px;
             width: 25%;
             text-align: left;
+            @media only screen and (max-width : $mw) {
+                left: -21px;
+                width: 37%;
+            }
         }
 
         &.d3 {
@@ -798,6 +822,10 @@ section.recipes {
             width: 30%;
             text-align: right;
             z-index: 1;
+
+            @media only screen and (max-width : $mw) {
+                width: 62%;
+            }
         }
     }
     .section-inner {
@@ -810,15 +838,32 @@ section.recipes {
         padding: 100px 130px;
         padding-bottom: 80px;
         .swiper-slide {
-            transition-duration: 250ms;
-            transition-property: transform, opacity;
-            opacity: 0;
+            @media only screen and (min-width : $mw) {
+                transition-duration: 250ms;
+                transition-property: transform, opacity;
+                opacity: 0;
 
-            &.swiper-slide-visible {
-                opacity: 1;
-                transition-duration: 0ms;
+                &.swiper-slide-visible {
+                    opacity: 1;
+                    transition-duration: 0ms;
+                }
             }
 
+            @media only screen and (max-width : $mw) {
+                .text {
+                    transition-duration: 250ms;
+                    transition-property: transform, opacity;
+                    opacity: 0;
+                }
+                
+                &.swiper-slide-visible {
+                    .text {
+                        opacity: 1;
+                        transition-duration: 0ms;
+                    }
+                    
+                }
+            }
             &.swiper-slide-active {
                 .box-recipe {
                     .image {
@@ -843,6 +888,30 @@ section.recipes {
         .arrow {
             cursor: pointer;
             pointer-events: auto;
+        }
+    }
+
+    @media only screen and (max-width : $lw) {
+        .slider-recipes {
+            padding: 100px 90px;
+            padding-bottom: 50px;
+        }
+        .nav {
+            .arrow {
+                img {
+                    height: 75px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        .section-inner {
+            padding: 0;
+        }
+        .slider-recipes {
+            padding: 60px 50px;
+            padding-bottom: 20px;
         }
     }
 }
@@ -875,6 +944,26 @@ section.recipes {
         margin-top: 35px;
         text-align: center;
     }
+
+    @media only screen and (max-width : $lw) {
+        .image {
+            height: 325px;
+        }
+        .text {
+            font-size: 25px;
+            margin-top: 25px;
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        .image {
+            height: 235px;
+        }
+        .text {
+            font-size: 22px;
+            margin-top: 20px;
+        }
+    }
 }
 
 /* ---------------------- Section about ---------------------- */
@@ -886,6 +975,14 @@ section.about {
             left: 36%;
             width: 20%;
             text-align: left;
+
+            @media only screen and (max-width : $mw) {
+                top: auto;
+                bottom: 240px;
+                left: auto;
+                right: 4%;
+                width: 30%;
+            }
         }
     }
     .wrapper-image {
@@ -901,13 +998,14 @@ section.about {
 
     .boxes {
         display: flex;
-        flex-wrap: wrap;
+        //flex-wrap: wrap;
 
         margin: -20px;
         margin-top: 75px;
         .box {
             padding: 20px;
             max-width: 200px;
+            width: 33.33%; 
             .inner {
                 position: relative;
             }
@@ -952,11 +1050,51 @@ section.about {
             }
         }
     }
+
+    @media only screen and (max-width : $mw) {
+        .content {
+            max-width: 100%;
+        }
+
+        .boxes {
+            margin: -10px;
+            margin-top: 45px;
+            .box {
+                padding: 10px;
+                max-width: 200px;
+                .inner {
+                    position: relative;
+                }
+    
+                .icon {
+                    height: 45px;
+                    img {
+                        transform: translateX(20px) translateY(10px);
+                    }
+
+                    &:after {
+                        width: 70px;
+                    }
+                }
+    
+                .text {
+                    font-size: 19px;
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        .wrapper-image {
+            margin-top: 25px;
+        }
+    }
 }
 /* --------------------- /Section about ---------------------- */
 .section-bg-about {
     background: #fef8f3 url("../images/index/bg-about.png") no-repeat;
     background-position: right 25%;
+    max-width: 1755px;
+    margin: auto;
     section,
     footer {
         background: none;
@@ -980,6 +1118,9 @@ footer {
     position: relative;
     overflow: hidden;
     margin-top: 145px;
+    max-width: 1755px;
+    margin: auto;
+    background: #FEF8F3;
     .bg {
         position: absolute;
         font-size: 0;
@@ -1012,6 +1153,12 @@ footer {
             .part-form {
                 text-align: left;
             }
+        }
+    }
+
+    .logo {
+        img {
+            max-width: 100%;
         }
     }
 
@@ -1138,6 +1285,116 @@ footer {
             }
         }
     }
+
+    @media only screen and (max-width : $lw) {
+        .part-top {
+            .parts {
+                .part-cols {
+                    .cols {
+                        margin: 0 -30px;
+                        .col {
+                            padding: 0 30px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .wrapper-form {
+            padding: 50px;
+
+            .title {
+                font-size: 55px;
+            }
+            .subtitle {
+                font-size: 40px;
+            }
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+
+        &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: calc(100% - 420px);
+            background-color: #E30613;
+        }
+        .bg {
+            img {
+                width: 950px;
+            }
+        }
+        .part-top {
+            padding-bottom: 45px;
+            padding-top: 35px;
+            .parts {
+                .part-form {
+                    text-align: center;
+                }
+                .part-cols {
+                
+                    .cols {
+                        flex-wrap: wrap;
+                        .col {
+                            width: 100%;
+                            margin-top: 35px;
+                        }
+                    }
+                }
+            }
+        }
+        .logo {
+            text-align: center;
+            width: 100%;
+        }
+        .social {
+            justify-content: center;
+        }
+        .wrapper-form {
+            margin: auto;
+            padding: 25px;
+
+            .title {
+                font-size: 45px;
+            }
+            .subtitle {
+                font-size: 35px;
+            }
+        }
+
+        .menu-cont-footer {
+            margin-top: 35px;
+            .main-menu {
+                display: block;
+                column-count: 2;
+                column-gap: 30px;
+                li {
+                    margin: 5px;
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+
+        .part-bottom {
+            .section-inner {
+                flex-direction: column;
+                .sep {
+                    display: none;
+                }
+                .credit {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+
 }
 /* --------------------- /footer ---------------------- */
 

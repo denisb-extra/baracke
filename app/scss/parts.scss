@@ -1,6 +1,6 @@
 section {
 	width: 100%;
-	max-width: 1920px;
+	max-width: 1755px;
 	margin: auto;	
 	overflow: hidden;
 	position: relative;
@@ -13,7 +13,7 @@ section {
 		padding: 55px 0;
 	}
 	@media only screen and (max-width : $mw) {
-		padding: 35px 0;
+		padding: 55px 0;
 	}
 }
 
@@ -186,6 +186,19 @@ section {
 		}
 		.icon {
 			background: #fff;
+		}
+	}
+
+	@media only screen and (max-width : $mw) {
+		font-size: 18px;
+		padding-left: 20px;
+		.icon {
+			height: 50px;
+			width: 50px;
+			margin-left: 15px;
+		}
+		&:before {
+			width: 50px;
 		}
 	}
 }
