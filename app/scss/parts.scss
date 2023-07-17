@@ -22,7 +22,6 @@ section {
 	padding: 0 40px;
 	width: 100%;
 	margin: auto;
-	position: relative;
 
 	@media only screen and (max-width : $mw) {
 		padding: 0 10px;
@@ -34,11 +33,38 @@ section {
 	font-size: 20px;
 	color: var(--color-text);
 	line-height: 1.5;
+
 	&.white {
 		color: #fff;
 	}
 	p,ul,li,h1,h2,h3,h4,h5,img {
 		margin-top: 15px;
+	}
+	&.fnm {
+		p,ul,li,h1,h2,h3,h4,h5,img {
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+
+	h2 {
+		@include f-bar-b;
+		font-size: 113px;
+		color: var(--color-text);
+		line-height: 1;
+		position: relative;
+		z-index: 4;
+	}
+	h3 {
+		@include f-bl;
+		font-size: 40px;
+		color: var(--color-text);
+	}
+	h4 {
+		@include f-bl;
+		font-size: 32px;
+		color: var(--color-text);
 	}
 	a {
 		color: var(--color-main);
@@ -56,8 +82,39 @@ section {
 		max-width: 100%;
 	}
 
+	@media only screen and (max-width : $lw) {
+		h2 {
+			font-size: 90px;
+		}
+		h3 {
+			font-size: 35px;
+		}
+		h4 {
+			font-size: 28px;
+		}
+	}
+	@media only screen and (max-width : $tw) {
+		h2 {
+			font-size: 75px;
+		}
+		h3 {
+			font-size: 30px;
+		}
+		h4 {
+			font-size: 22px;
+		}
+	}
 	@media only screen and (max-width : $mw) {
 		font-size: 18px;
+		h2 {
+			font-size: 50px;
+		}
+		h3 {
+			font-size: 25px;
+		}
+		h4 {
+			font-size: 20px;
+		}
 	}
 	
 }
@@ -120,6 +177,8 @@ section {
 	@include f-bar-b;
 	font-size: 113px;
 	color: var(--color-text);
+	position: relative;
+	z-index: 4;
 	&.white {
 		color: #fff;
 	}
@@ -131,6 +190,22 @@ section {
 	}
 	@media only screen and (max-width : $mw) {
 		font-size: 50px;
+	}
+}
+
+.section-subtitle {
+	@include f-bl;
+	font-size: 32px;
+	color: var(--color-text);
+
+	@media only screen and (max-width : $lw) {
+		font-size: 28px;
+	}
+	@media only screen and (max-width : $tw) {
+		font-size: 25px;
+	}
+	@media only screen and (max-width : $mw) {
+		font-size: 20px;
 	}
 }
 
@@ -157,6 +232,10 @@ section {
 		position: relative;
 		z-index: 1;
 		transition: 0.5s;
+
+		img {
+			margin: 0;
+		}
 	}
 	span {
 		position: relative;

@@ -919,18 +919,20 @@ section.recipes {
 
 .box-recipe {
     .image {
-        
         height: 407px;
         transition-duration: 250ms;
         transition-property: transform, opacity;
         transform-origin: bottom center;
+        font-size: 0;
+        @include flex-center;
+        text-align: center;
         .inner {
             height: 100%;
             overflow: hidden;
             border-radius: 13px;
             filter: drop-shadow(2px 11px 11px rgba(0, 0, 0, 0.25));
-            font-size: 0;
-            @include flex-center;
+            display: inline-block;
+            margin: auto;
         }
         img {
             height: 100%;
@@ -1141,13 +1143,7 @@ footer {
 
             .part-cols {
                 
-                .cols {
-                    display: flex;
-                    margin: 0 -60px;
-                }
-                .col {
-                    padding: 0 60px;
-                }
+                
             }
 
             .part-form {
@@ -1155,6 +1151,15 @@ footer {
             }
         }
     }
+
+    .cols {
+        display: flex;
+        margin: 0 -60px;
+        .col {
+            padding: 0 60px;
+        }
+    }
+    
 
     .logo {
         img {
@@ -1287,16 +1292,10 @@ footer {
     }
 
     @media only screen and (max-width : $lw) {
-        .part-top {
-            .parts {
-                .part-cols {
-                    .cols {
-                        margin: 0 -30px;
-                        .col {
-                            padding: 0 30px;
-                        }
-                    }
-                }
+        .cols {
+            margin: 0 -30px;
+            .col {
+                padding: 0 30px;
             }
         }
 
@@ -1329,22 +1328,19 @@ footer {
                 width: 950px;
             }
         }
+        .cols {
+            flex-wrap: wrap;
+            .col {
+                width: 100%;
+                margin-top: 35px;
+            }
+        }
         .part-top {
             padding-bottom: 45px;
             padding-top: 35px;
             .parts {
                 .part-form {
                     text-align: center;
-                }
-                .part-cols {
-                
-                    .cols {
-                        flex-wrap: wrap;
-                        .col {
-                            width: 100%;
-                            margin-top: 35px;
-                        }
-                    }
                 }
             }
         }
